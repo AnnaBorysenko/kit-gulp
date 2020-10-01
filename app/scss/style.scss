@@ -1,0 +1,286 @@
+@import "../../node_modules/normalize.css/normalize";
+@import "../icomoon-11/style.css";
+// @import "../../node_modules/slick-carousel/slick/slick";
+// @import "../../node_modules/magnific-popup/dist/magnific-popup";
+$text-color: #fff;
+$link-color: #fff;
+$bg: #736db5;
+$color-bt: #9a8f9f;
+$color-bb: #422f69;
+
+@mixin header($bg, $color-bt, $color-bb) {
+  background: $bg;
+  border-top: solid 1px #{$color-bt};
+  border-bottom: solid 1px #{$color-bb};
+  width: 300px;
+  height: 60px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+  text-transform: uppercase;
+  font: 600 20px/60px "Roboto", sans-serif;
+}
+@mixin btn($bg, $color-bt, $color-bb) {
+  background: $bg;
+  border-top: solid 1px #{$color-bt};
+  border-bottom: solid 1px #{$color-bb};
+  text-transform: uppercase;
+  width: 250px;
+  font: 600 20px/60px "Roboto", sans-serif;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, $opacity);
+}
+
+body {
+  background: radial-gradient(
+    ellipse at center,
+    #594376 0%,
+    #c671b0 0%,
+    #415672 100%
+  );
+  a {
+    color: $link-color;
+    text-decoration: none;
+  }
+}
+.main {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  color: $text-color;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  width: 100%;
+  height: 100vh;
+}
+.box {
+  padding: 20px;
+  width: 300px;
+}
+.box-main {
+  @include background-opacity(#333, 0.1);
+  border-radius: 0 0 10px 10px;
+  border: 1px solid #bd9cb9;
+}
+.header1 {
+  @include header(#736db4, $color-bt, $color-bb);
+}
+.form-kit div {
+  margin: 0 0 0 20px;
+  label {
+    display: block;
+    font: 200 16px/26px "Roboto", sans-serif;
+    text-transform: capitalize;
+    padding-top: 20px;
+  }
+  input {
+    @include background-opacity(#333, 0.2);
+    width: 250px;
+    height: 60px;
+    border-radius: 10px;
+    border-top: 1px solid #fff;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-color: none;
+    color: #fff;
+    outline: none;
+    font: 200 16px/36px "Roboto", sans-serif;
+    padding-left: 10px;
+  }
+  input::placeholder {
+    color: #fff;
+    font: 400 16px/26px "Roboto", sans-serif;
+  }
+  input:hover {
+    @include background-opacity(#333, 0.5);
+  }
+}
+.or {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 0;
+  div {
+    width: 100px;
+    height: 10px;
+    border-bottom: 1px solid #fff;
+  }
+  span {
+    font: 400 14px/20px "Roboto", sans-serif;
+    text-transform: capitalize;
+  }
+}
+.footer {
+  @include background-opacity(#333, 0.5);
+  height: 60px;
+  border-top: 1px solid #fff;
+  border-radius: 0 0 10px 10px;
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    padding-inline-start: 10px;
+    padding-top: 12px;
+    margin-block-start: 1px;
+    margin-block-end: 1px;
+    li {
+      margin-left: 45px;
+      height: 30px;
+      width: 30px;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      a {
+        text-align: center;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        margin-left: 2px;
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+.header2 {
+  @include header(#b5845c, #cc9966, $color-bb);
+}
+
+.box2 .profile {
+  height: 150px;
+  background: url(../img/bg-box2.png);
+  border-bottom: solid 1px #{$color-bb};
+  margin-bottom: 24px;
+  position: relative;
+
+  .pfoto {
+    background: url(../img/photo-box2.png);
+    position: absolute;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    top: 30px;
+    left: 40px;
+  }
+  .profile-name {
+    position: absolute;
+    top: 50px;
+    right: 40px;
+    font: 600 20px/30px "Roboto", sans-serif;
+    span {
+      padding-left: 15px;
+      display: block;
+      font: 400 16px/20px "Roboto", sans-serif;
+    }
+    .icon-location:before {
+      content: "\e900";
+      position: absolute;
+      left: -2px;
+      bottom: 2px;
+    }
+  }
+}
+.following-wrapper {
+  font: 400 16px/36px "Roboto", sans-serif;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+
+  span {
+    font: 200 30px/20px "Roboto", sans-serif;
+    display: block;
+  }
+}
+.following-wrapper div {
+  height: 80px;
+  border-right: 1px solid #fff;
+  padding-right: 30px;
+}
+.following-wrapper div:last-child {
+  border-right: none;
+}
+.btn-box2 {
+  @include background-opacity(#333, 0.2);
+  width: 250px;
+  height: 60px;
+  border-radius: 10px;
+  font: 600 20px/60px "Roboto", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 0 20px 25px;
+}
+.main-box3 {
+  @include background-opacity(#333, 0.2);
+  border: 1px solid #bd9cb9;
+  border-radius: 0 0 10px 10px;
+}
+.prog-bar {
+    height: 164px;
+    width: 164px;
+    background: url(../img/progresbar.png);
+    margin: 40px 0 30px 67px;
+}
+.complete {
+    padding-bottom: 45px;
+    p {
+        font: 400 16px "Roboto", sans-serif;
+        text-align: center;
+        span {
+            display: block;
+            font: 200 30px "Roboto", sans-serif;
+        }
+    }
+}
+.header3 {
+  @include header(#6a8d7a, #84ba9a, $color-bb);
+}
+.location {
+  @include background-opacity(#333, 0.2);
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 0;
+  border-radius: 0 0 10px 10px;
+  border: 1px solid #bd9cb9;
+}
+.city {
+  position: relative;
+  font: 200 16px/46px "Roboto", sans-serif;
+  height: 80px;
+  border-right: 1px solid #fff;
+  padding-right: 25px;
+}
+.location .icon-location {
+  position: absolute;
+  font-size: 30px;
+  opacity: 0.6;
+  left: -32px;
+  top: 22px;
+}
+.icon-checkmark-outline {
+  font-size: 50px;
+  line-height: 80px;
+  opacity: 0.6;
+}
+
+.header4 {
+  @include header(#b39573, #c6c597, $color-bb);
+}
+.btn-footer {
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 25px;
+}
+.btn1 {
+  @include btn(#847796, #9a91a7, #847796);
+}
+.btn2 {
+  @include btn(#32487f, #5060ac, $color-bb);
+}
+.btn3 {
+  @include btn(#416e8d, #6699c9, $color-bb);
+}
+.btn4 {
+  @include btn(#3c704f, #3ec576, $color-bb);
+}
