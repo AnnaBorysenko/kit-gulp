@@ -12,7 +12,7 @@ $color-bb: #422f69;
   background: $bg;
   border-top: solid 1px #{$color-bt};
   border-bottom: solid 1px #{$color-bb};
-  width: 300px;
+
   height: 60px;
   text-align: center;
   border-radius: 10px 10px 0 0;
@@ -68,8 +68,10 @@ body {
 .header1 {
   @include header(#736db4, $color-bt, $color-bb);
 }
+.form-kit {
+  padding: 20px;
+}
 .form-kit div {
-  margin: 0 0 0 20px;
   label {
     display: block;
     font: 200 16px/26px "Roboto", sans-serif;
@@ -78,7 +80,8 @@ body {
   }
   input {
     @include background-opacity(#333, 0.2);
-    width: 250px;
+    box-sizing: border-box;
+    width: 100%;
     height: 60px;
     border-radius: 10px;
     border-top: 1px solid #fff;
@@ -102,7 +105,7 @@ body {
 .or {
   display: flex;
   justify-content: space-evenly;
-  padding: 20px 0;
+  padding: 20px 0 0;
   div {
     width: 100px;
     height: 10px;
@@ -122,12 +125,9 @@ body {
   ul {
     display: flex;
     list-style-type: none;
-    padding-inline-start: 10px;
-    padding-top: 12px;
-    margin-block-start: 1px;
-    margin-block-end: 1px;
+    justify-content: space-between;
+    padding: 0 20px;
     li {
-      margin-left: 45px;
       height: 30px;
       width: 30px;
       border: 1px solid #fff;
@@ -149,24 +149,26 @@ body {
 
 .box2 .profile {
   height: 150px;
-  background: url(../img/bg-box2.png);
+  background: url(../img/bg-box2.png) center / cover;
   border-bottom: solid 1px #{$color-bb};
   margin-bottom: 24px;
   position: relative;
-
+  .pfoto-wrapper {
+    justify-content: flex-start;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
   .pfoto {
-    background: url(../img/photo-box2.png);
-    position: absolute;
+    background: url(../img/photo-box2.png) no-repeat;
     width: 88px;
     height: 88px;
     border-radius: 50%;
-    top: 30px;
-    left: 40px;
+    margin-left: 20px;
   }
   .profile-name {
-    position: absolute;
-    top: 50px;
-    right: 40px;
+    padding-left: 30px;
+    position: relative;
     font: 600 20px/30px "Roboto", sans-serif;
     span {
       padding-left: 15px;
@@ -176,7 +178,7 @@ body {
     .icon-location:before {
       content: "\e900";
       position: absolute;
-      left: -2px;
+      left: 28px;
       bottom: 2px;
     }
   }
@@ -193,37 +195,44 @@ body {
     display: block;
   }
 }
-.following-wrapper div {
+.following{
   height: 80px;
+  width: 50%;
   border-right: 1px solid #fff;
-  padding-right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-.following-wrapper div:last-child {
+.following-wrapper .following:last-child {
   border-right: none;
 }
 .btn-box2 {
   @include background-opacity(#333, 0.2);
-  width: 250px;
+  width: 90%;
   height: 60px;
   border-radius: 10px;
   font: 600 20px/60px "Roboto", sans-serif;
   text-transform: uppercase;
   text-align: center;
-  margin: 0 0 20px 25px;
+  margin: 0 5% 20px 5%;
 }
 .main-box3 {
   @include background-opacity(#333, 0.2);
-  border: 1px solid #bd9cb9;
   border-radius: 0 0 10px 10px;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid #bd9cb9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 .prog-bar {
     height: 164px;
     width: 164px;
     background: url(../img/progresbar.png);
-    margin: 40px 0 30px 67px;
 }
 .complete {
-    padding-bottom: 45px;
     p {
         font: 400 16px "Roboto", sans-serif;
         text-align: center;
@@ -239,29 +248,36 @@ body {
 .location {
   @include background-opacity(#333, 0.2);
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 10px 0;
   border-radius: 0 0 10px 10px;
   border: 1px solid #bd9cb9;
 }
+
 .city {
   position: relative;
-  font: 200 16px/46px "Roboto", sans-serif;
+  font: 400 16px/46px "Roboto", sans-serif;
   height: 80px;
-  border-right: 1px solid #fff;
-  padding-right: 25px;
+  padding-left: 54px;
 }
+
+.checkmark {
+  width: 100px;
+  border-left: 1px solid;
+}
+
 .location .icon-location {
   position: absolute;
   font-size: 30px;
   opacity: 0.6;
-  left: -32px;
+  left: 20px;
   top: 22px;
 }
 .icon-checkmark-outline {
   font-size: 50px;
   line-height: 80px;
   opacity: 0.6;
+  padding-left: 28px;
 }
 
 .header4 {
